@@ -38,7 +38,7 @@
       return '<a class="tag p" href="' + PREFIX + 'p/' + p.toLowerCase() + '.html">' + p + "</a>";
     }).join("");
     var html = '<p class="vt">' + d.n + "</p>" +
-      '<p class="psub">' + d.g + " ｜ " + d.loc + "</p>" +
+      '<p class="psub">' + d.g + " ｜ " + (d.cty ? d.cty + " ｜ " : "") + d.loc + "</p>" +
       '<p class="q">' + d.s + "</p>" +
       (d.o ? '<p class="kvline">现场看点：' + d.o + "</p>" : "") +
       '<p class="kvline">时代：' + d.age + " ｜ 本页正文约 " + (d.wc || 0) + " 字" +
@@ -83,14 +83,6 @@
   });
   document.addEventListener("change", function (e) {
     if (e.target && e.target.id === "grp") { filter(); }
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "/" && document.getElementById("q") &&
-        document.activeElement !== document.getElementById("q")) {
-      e.preventDefault();
-      document.getElementById("q").focus();
-    }
   });
 
   if (document.getElementById("viewer") && DATA.length) { pick(); filter(); }
