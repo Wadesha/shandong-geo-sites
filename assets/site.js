@@ -42,7 +42,6 @@
       '<p class="q">' + d.s + "</p>" +
       (d.o ? '<p class="kvline">现场看点：' + d.o + "</p>" : "") +
       '<p class="kvline">时代：' + d.age + " ｜ 本页正文约 " + (d.wc || 0) + " 字" +
-      (d.bk ? "，附志书原文 " + d.bk + " 段" : "") +
       " ｜ 术语 " + (d.tm || 0) + " 条 ｜ 原理标签：" + why + "</p>";
     if (v) { v.innerHTML = html; }
     var o = document.getElementById("btnopen");
